@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from '~/components/home/Navbar'
+import Navbar from '~/components/main/Navbar'
 
 const attractions = () => {
   return (

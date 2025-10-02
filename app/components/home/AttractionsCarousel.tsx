@@ -26,6 +26,11 @@ const AttractionsCarousel = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto mt-8 sm:mt-12 px-4 sm:px-6">
+
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-800">
+        Featured Destinations
+      </h2>
+
       {/* Carousel */}
       <div className="overflow-hidden rounded-xl sm:rounded-2xl" ref={emblaRef}>
         <div className="flex">

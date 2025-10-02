@@ -1,7 +1,9 @@
-import Navbar from "~/components/home/Navbar";
+import Navbar from "~/components/main/Navbar";
 import type { Route } from "./+types/home";
 import Hero from "~/components/home/Hero";
 import AttractionsCarousel from "~/components/home/AttractionsCarousel";
+import EventsCarousel from "~/components/home/EventsCarousel";
+import Footer from "~/components/main/Footer";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -17,6 +19,8 @@ const home = () => {
     <Navbar />
     <Hero />
     <AttractionsCarousel />
+    <EventsCarousel />
+    <Footer />
     </>
   )
 }

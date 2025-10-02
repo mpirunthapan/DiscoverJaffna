@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '~/components/main/Navbar'
 
-const restaurants = () => {
+const stays = () => {
   return (
     <>
     <Navbar />  
@@ -9,4 +9,4 @@ const restaurants = () => {
   )
 }
 
-export default restaurants
+export default stays
