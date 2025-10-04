@@ -27,7 +27,7 @@ const AttractionsCarousel = () => {
   return (
     <div className="w-full max-w-6xl mx-auto mt-8 sm:mt-12 px-4 sm:px-6">
 
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-800">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8 text-gray-800 text-center sm:text-left">
         Featured Destinations
       </h2>
 
@@ -42,7 +42,7 @@ const AttractionsCarousel = () => {
               <img
                 src={item.image}
                 alt={item.name}
-                className="w-full h-48 sm:h-56 md:h-64 lg:h-72 object-cover rounded-lg shadow-md"
+                className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover rounded-lg shadow-md"
               />
               <div className="absolute bottom-3 left-3 bg-black/60 text-white text-xs sm:text-sm md:text-base px-2 sm:px-3 py-1 rounded-lg">
                 {item.name}
@@ -52,7 +52,6 @@ const AttractionsCarousel = () => {
         </div>
       </div>
 
-      {/* CTA Button */}
       <div className="flex justify-center mt-5 sm:mt-8">
         <Link
           to="/attractions"

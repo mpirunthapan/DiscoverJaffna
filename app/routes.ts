@@ -7,5 +7,6 @@ export default [
     route("restaurants","routes/restaurants.tsx"),
     route("rentals","routes/rentals.tsx"),
     route("events","routes/events.tsx"),
+    route("contact","routes/contact.tsx"),
     route("*","routes/pagenotfound.tsx"),
 ] satisfies RouteConfig;
