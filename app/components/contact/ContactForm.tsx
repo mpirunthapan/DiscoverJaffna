@@ -1,8 +1,11 @@
 import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { data } from "react-router";
+import { useNavigate } from "react-router";
 
 const ContactForm = () => {
+    const navigate = useNavigate();
+
     const [formData, setFormData] = useState({
         from_name: "",
         from_email: "",
@@ -34,6 +37,7 @@ const ContactForm = () => {
             (result) => {
             alert("Message sent successfully!");
             setFormData({ from_name: "", from_email: "", subject: "", message: "", time: "" });
+            navigate("/");
             },
             (error) => {
             alert("Failed to send message, please try again.");
@@ -109,7 +113,7 @@ const ContactForm = () => {
 
     <button
         type="submit"
-        className="w-full bg-blue-500 text-white py-2 sm:py-3 rounded-md hover:bg-blue-600 transition text-sm sm:text-base"
+        className="w-full bg-blue-500 text-white py-2 sm:py-3 rounded-md hover:bg-blue-600 transition text-sm sm:text-base cursor-pointer"
     >
         Send Message
     </button>
