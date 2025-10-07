@@ -10,6 +10,7 @@ interface AttractionsTableProps {
 
 const AttractionsTable:React.FC<AttractionsTableProps> = ({searchQuery}) => {
     const [currentPage, setCurrentPage] = useState(1);
+    const [selectedCategory, setSelectedCategory] = useState("All");
     const itemsPerPage = 6;
     const navigate = useNavigate();
 
@@ -17,9 +18,14 @@ const AttractionsTable:React.FC<AttractionsTableProps> = ({searchQuery}) => {
         setCurrentPage(1); // Reset to first page on new search
     }, [searchQuery]);
 
-    const filteredAttractions = attractionsData.filter((item) =>
-        item.name.toLowerCase().includes(searchQuery ? searchQuery.toLowerCase() : "")
-    );
+    const categories = ["All", ...new Set(attractionsData.map(item => item.category))];
+    
+
+    const filteredAttractions = attractionsData.filter((item) => {
+        const matchesSearch = item.name.toLowerCase().includes(searchQuery?.toLowerCase() || "");
+        const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+    });
 
     const totalPages = Math.ceil(filteredAttractions.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -33,6 +39,24 @@ const AttractionsTable:React.FC<AttractionsTableProps> = ({searchQuery}) => {
     
     return (
         <section className="py-10 px-4 md:px-12 bg-gray-50">
+
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                <h2 className="text-2xl font-bold text-gray-800 mb-3 sm:mb-0">
+                    Attractions in Jaffna
+                </h2>
+                <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="border border-gray-300 rounded-lg px-3 py-2 text-gray-700 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 cursor-pointer"
+                >
+                    {categories.map((category, index) => (
+                        <option key={index} value={category}>
+                            {category}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {paginatedData.map((attraction: Attraction) => (
             <div
