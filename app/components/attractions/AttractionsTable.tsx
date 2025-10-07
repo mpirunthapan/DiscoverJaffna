@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import {attractionsData} from '~/data/attractionsData';
@@ -12,6 +12,10 @@ const AttractionsTable:React.FC<AttractionsTableProps> = ({searchQuery}) => {
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 6;
     const navigate = useNavigate();
+
+    useEffect(() => {
+        setCurrentPage(1); // Reset to first page on new search
+    }, [searchQuery]);
 
     const filteredAttractions = attractionsData.filter((item) =>
         item.name.toLowerCase().includes(searchQuery ? searchQuery.toLowerCase() : "")
