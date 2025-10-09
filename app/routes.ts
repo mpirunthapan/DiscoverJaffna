@@ -5,6 +5,7 @@ export default [
     route("attractions","routes/attractions.tsx"),
     route("attraction/:id","routes/attractionDetail.tsx"),
     route("stays","routes/stays.tsx"),
+    route("stay/:id", "routes/stayDetail.tsx"),
     route("restaurants","routes/restaurants.tsx"),
     route("rentals","routes/rentals.tsx"),
     route("events","routes/events.tsx"),
