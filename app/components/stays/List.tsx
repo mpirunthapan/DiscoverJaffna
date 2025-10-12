@@ -53,7 +53,7 @@ const StayList: React.FC<StayListProps> = ({ stays }) => {
                     {/* View Details Button */}
                     <button
                         onClick={() => navigate(`/stay/${stay.id}`)}
-                        className="w-full py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition duration-200 font-medium"
+                        className="w-full py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition duration-200 font-medium cursor-pointer"
                     >
                         View Details
                     </button>
