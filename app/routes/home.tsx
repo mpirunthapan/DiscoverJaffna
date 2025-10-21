@@ -8,8 +8,8 @@ import Footer from "~/components/main/Footer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Discover Jaffna" },
+    { name: "description", content: "Learn About Jaffna and It's Culture and Significant!" },
   ];
 }
 
