@@ -116,7 +116,7 @@ const stayDetail: React.FC = () => {
         {isPopupOpen && selectedIndex !== null && (
             <div
                 id='image-popup'
-                className="fixed inset-0 backdrop-blur-lg bg-black/70 flex justify-center items-center z-50 p-4"
+                className="fixed inset-0 backdrop-blur-lg bg-black/70 flex min-h-[100vh] justify-center items-center z-50 p-4"
                 onKeyDown={(e) => {
                 if (e.key === "ArrowRight") showNext();
                 if (e.key === "ArrowLeft") showPrev();
