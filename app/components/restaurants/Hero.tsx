@@ -31,14 +31,14 @@ const Hero: React.FC<HeroProps> = ({ onFilterChange, onClear }) => {
       </p>
 
       {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-4 max-w-3xl mx-auto">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 max-w-3xl mx-auto cursor-pointer">
         {/* Search */}
         <input
           type="text"
           placeholder="Search by name or cuisine..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="p-2 rounded-xl border border-gray-300 text-gray-800"
+          className="p-2 rounded-xl border border-gray-300 text-gray-800 w-full sm:w-auto"
         />
 
         {/* Category */}
@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = ({ onFilterChange, onClear }) => {
           onChange={(e) => {
             setCategory(e.target.value);
           }}
-          className="p-2 rounded-xl border border-gray-300 text-gray-800"
+          className="p-2 rounded-xl border border-gray-300 text-gray-800 cursor-pointer w-full sm:w-auto"
         >
           <option value="">All Categories</option>
           <option value="Vegetarian">Vegetarian</option>
@@ -60,11 +60,11 @@ const Hero: React.FC<HeroProps> = ({ onFilterChange, onClear }) => {
 
         {/* Price */}
         <select
-          value={price}
+          value={price} 
           onChange={(e) => {
             setPrice(e.target.value);
           }}
-          className="p-2 rounded-xl border border-gray-300 text-gray-800"
+          className="p-2 rounded-xl border border-gray-300 text-gray-800 cursor-pointer w-full sm:w-auto"
         >
           <option value="">All Prices</option>
           <option value="$">$</option>
@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({ onFilterChange, onClear }) => {
         {/* Clear Button */}
         <button
           onClick={handleClear}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-gray-500 transition"
+          className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition cursor-pointer w-full sm:w-auto"
         >
           Clear
         </button>
